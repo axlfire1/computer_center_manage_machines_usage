@@ -1,0 +1,2 @@
+module ConsultaUsosHelper
+end

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Universidad Politecnica de Tlaxcala</title>
+    <%= stylesheet_link_tag    "application", :media => "all" %>
+    <%= javascript_include_tag "application" %>
+    <%= csrf_meta_tags %>
+ 
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="http://code.jquery.com/ui/1.9.1/themes/base/jquery-ui.css" />
+    <script src="http://code.jquery.com/jquery-1.8.2.js"></script>
+    <script src="http://code.jquery.com/ui/1.9.1/jquery-ui.js"></script>
+    <link rel="stylesheet" href="/resources/demos/style.css" />
+  </head>
+  <body>
+
+  <center>
+    <h1 style="color: green">
+      Universidad Politecnica de Tlaxcala
+    </h1>
+  </center>
+  <center>
+    <h2 style="color:green">Region Poniente</h2>
+    <p>
+      <a href="show_available">Inicio</a>
+    </p>
+  </center>  
+
+  <table align="center" >
+    <tr>
+      <td>
+        <% if flash[:alert] %>
+          <p class="flash-error"><%= flash[:alert] %></p>
+        <% end %>
+        <% if flash[:notice] %>
+          <p class="flash-notice"><%= flash[:notice] %></p>
+        <% end %>
+        <%= yield %>
+      </td>
+    </tr>
+  </table>
+
+</body>
+</html>

@@ -1,0 +1,7 @@
+<h1>Escribe tu matricula</h1>
+
+
+<%= form_tag release_machine_path do %>
+  <p>Matricula: <%= text_field_tag :matricula, "",:size => 30  %> </p>
+  <p> <%= submit_tag "Seleccionar" %>  </p>
+<% end %>

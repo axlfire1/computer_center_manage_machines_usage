@@ -1,0 +1,6 @@
+<h1>Escribe tu matricula</h1>
+<%= form_tag save_uso_path do %>
+  <p>Matricula: <%= text_field_tag :matricula, "",:size => 30  %> </p>
+  <%= hidden_field_tag :computadora, @computadora.id %>
+  <p> <%= submit_tag "Seleccionar" %>  </p>
+<% end %>

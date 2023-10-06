@@ -1,0 +1,23 @@
+
+<h1>Selleciona el dia que quieras consultar</h1>
+
+
+<script>
+  $(function() {
+    $( "#datepicker" ).datepicker();
+  });
+</script>
+
+
+
+<%= form_tag muestra_usos_path do %>
+  <p>
+    Fecha: <%= text_field_tag :fecha, "",:size => 10, :id=>"datepicker"  %>
+    <%= submit_tag "Seleccionar" %>
+  </p>
+
+<% end %>
+
+  
+  
+    

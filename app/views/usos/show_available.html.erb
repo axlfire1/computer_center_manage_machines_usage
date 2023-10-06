@@ -1,0 +1,19 @@
+<h1>Selecciona una computadora<h1>
+
+    <table >
+      <% @computadoras.each do |computadora| %>
+        <tr class="computadora<%= computadora.estado %> ">
+          <td><%= computadora.descripcion %></td>
+          
+          <td style="">
+            
+            <%= computadora.ultimo_uso ? computadora.ultimo_uso.usuario.full_name : ""   %>
+          </td>
+          <% if  computadora.estado %>
+            <td><%= link_to 'Seleccionar', select_users_path(computadora) %></td>
+          <% end %>
+        </tr>
+      <% end %>
+    </table>
+    
+    <%= link_to 'Liberar', insert_users_path %>

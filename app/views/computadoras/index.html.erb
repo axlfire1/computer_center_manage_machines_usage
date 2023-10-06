@@ -1,0 +1,27 @@
+<h1>Listing computadoras</h1>
+
+<table>
+  <tr>
+    <th>Descripcion</th>
+    <th>Ip</th>
+    <th>Estado</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @computadoras.each do |computadora| %>
+  <tr>
+    <td><%= computadora.descripcion %></td>
+    <td><%= computadora.ip %></td>
+    <td><%= computadora.estado %></td>
+    <td><%= link_to 'Show', computadora %></td>
+    <td><%= link_to 'Edit', edit_computadora_path(computadora) %></td>
+    <td><%= link_to 'Destroy', computadora, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Computadora', new_computadora_path %>

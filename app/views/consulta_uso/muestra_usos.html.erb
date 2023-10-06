@@ -1,0 +1,33 @@
+<tabla border="1" >
+  <tr>
+    <td><h3>Matricula</h3></td>
+    <td><h3>Maquina</h3></td>
+    <td><h3>Nombre</h3></td>
+    <td><h3>Ap paterno</h3></td>
+    <td><h3>Ap materno</h3></td>
+    <td><h3>Llegada</h3></td>
+    <td><h3>Salida</h3></td>
+  </tr>
+
+ <% @usos.each do |uso| %>
+    <tr>
+      <td><%= uso.usuario.matricula %>  </td>
+      <td><%= uso.computadora.descripcion %>--- </td>
+      <td><%= uso.usuario.nombre %> </td>
+
+      <td><%= uso.usuario.apellido_paterno %> </td>
+      <td><%= uso.usuario.apellido_materno %> </td>
+
+      <td><%= uso.hora_llegada.strftime("%Y-%m-%d %H:%M") %> ---</td>
+      <%
+      if(uso.hora_salida == nil)
+      %>
+        <td>No cerro sesion</td>
+      <%else%>
+        <td><%= uso.hora_salida.strftime("%Y-%m-%d %H:%M") %> --- </td>
+      <%end%>
+    </tr>
+
+  <% end %>
+
+</tabla>
